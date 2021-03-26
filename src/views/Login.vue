@@ -1,22 +1,34 @@
 <template>
   <div id="login">
-    <PasswordReset v-if="showPasswordReset" @close="togglePasswordReset()"></PasswordReset>
+    <PasswordReset
+      v-if="showPasswordReset"
+      @close="togglePasswordReset()"
+    ></PasswordReset>
     <section>
       <div class="col1">
-        <h1>Vuegram</h1>
-        <p>Welcome to the <a href="https://savvyapps.com/" target="_blank">Savvy Apps</a> sample social media web app powered by Vue.js and Firebase.
-          Build this project by checking out The Definitive Guide to Getting Started with Vue.js</p>
+        <h1>Sports Arena</h1>
+        <p>Welcome to Sports Arena, Please Login/Signup to continue</p>
       </div>
       <div :class="{ 'signup-form': !showLoginForm }" class="col2">
         <form v-if="showLoginForm" @submit.prevent>
           <h1>Welcome Back</h1>
           <div>
             <label for="email1">Email</label>
-            <input v-model.trim="loginForm.email" type="text" placeholder="you@email.com" id="email1" />
+            <input
+              v-model.trim="loginForm.email"
+              type="text"
+              placeholder="you@email.com"
+              id="email1"
+            />
           </div>
           <div>
             <label for="password1">Password</label>
-            <input v-model.trim="loginForm.password" type="password" placeholder="******" id="password1" />
+            <input
+              v-model.trim="loginForm.password"
+              type="password"
+              placeholder="******"
+              id="password1"
+            />
           </div>
           <button @click="login()" class="button">Log In</button>
           <div class="extras">
@@ -28,19 +40,39 @@
           <h1>Get Started</h1>
           <div>
             <label for="name">Name</label>
-            <input v-model.trim="signupForm.name" type="text" placeholder="Savvy Apps" id="name" />
+            <input
+              v-model.trim="signupForm.name"
+              type="text"
+              placeholder="Your Full Name or Club Name"
+              id="name"
+            />
           </div>
           <div>
-            <label for="title">Title</label>
-            <input v-model.trim="signupForm.title" type="text" placeholder="Company" id="title" />
+            <label for="title">Position</label>
+            <input
+              v-model.trim="signupForm.title"
+              type="text"
+              placeholder="Company"
+              id="title"
+            />
           </div>
           <div>
             <label for="email2">Email</label>
-            <input v-model.trim="signupForm.email" type="text" placeholder="you@email.com" id="email2" />
+            <input
+              v-model.trim="signupForm.email"
+              type="text"
+              placeholder="you@email.com"
+              id="email2"
+            />
           </div>
           <div>
             <label for="password2">Password</label>
-            <input v-model.trim="signupForm.password" type="password" placeholder="min 6 characters" id="password2" />
+            <input
+              v-model.trim="signupForm.password"
+              type="password"
+              placeholder="min 6 characters"
+              id="password2"
+            />
           </div>
           <button @click="signup()" class="button">Sign Up</button>
           <div class="extras">
@@ -53,49 +85,49 @@
 </template>
 
 <script>
-import PasswordReset from '@/components/PasswordReset'
+import PasswordReset from "@/components/PasswordReset";
 
 export default {
   components: {
-    PasswordReset
+    PasswordReset,
   },
   data() {
     return {
       loginForm: {
-        email: '',
-        password: ''
+        email: "",
+        password: "",
       },
       signupForm: {
-        name: '',
-        title: '',
-        email: '',
-        password: ''
+        name: "",
+        title: "",
+        email: "",
+        password: "",
       },
       showLoginForm: true,
-      showPasswordReset: false
-    }
+      showPasswordReset: false,
+    };
   },
   methods: {
     toggleForm() {
-      this.showLoginForm = !this.showLoginForm
+      this.showLoginForm = !this.showLoginForm;
     },
     togglePasswordReset() {
-      this.showPasswordReset = !this.showPasswordReset
+      this.showPasswordReset = !this.showPasswordReset;
     },
     login() {
-      this.$store.dispatch('login', {
+      this.$store.dispatch("login", {
         email: this.loginForm.email,
-        password: this.loginForm.password
-      })
+        password: this.loginForm.password,
+      });
     },
     signup() {
-      this.$store.dispatch('signup', {
+      this.$store.dispatch("signup", {
         email: this.signupForm.email,
         password: this.signupForm.password,
         name: this.signupForm.name,
-        title: this.signupForm.title
-      })
-    }
-  }
-}
+        title: this.signupForm.title,
+      });
+    },
+  },
+};
 </script>
