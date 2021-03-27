@@ -6,9 +6,10 @@
     ></PasswordReset>
     <section>
       <div class="col1">
-        <h1>Sports Arena</h1>
-        <p>Welcome to Sports Arena, Please Login/Signup to continue</p>
+        <h1>Arena</h1>
+        <p>Welcome to Arena, Please Login/Signup to Get Started</p>
       </div>
+
       <div :class="{ 'signup-form': !showLoginForm }" class="col2">
         <form v-if="showLoginForm" @submit.prevent>
           <h1>Welcome Back</h1>

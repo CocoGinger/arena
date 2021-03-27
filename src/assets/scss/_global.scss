@@ -1,14 +1,15 @@
 // imports
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 // colors
-$primary: #30A0EE;
+$primary:#23a582;
 $error: #ef5777;
 $success: #1abc9c;
 $light: #F5F8FA;
 $medium: #657786;
 $dark: #34495E;
 $white: #fff;
-
+$linear: linear-gradient(to right, #99f2c8 0%, #1f4037 50%, $white 50%, $white 100%);
+ 
 // resets
 body {
 	margin: 0;
@@ -130,7 +131,7 @@ section {
 }
 
 .button {
-	background: $primary;
+	background: #23a582;
 	border: 0;
 	outline: 0;
 	color: $white;

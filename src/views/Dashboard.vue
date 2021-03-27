@@ -8,7 +8,7 @@
       ></CommentModal>
     </transition>
     <section>
-      <div class="col1">
+      <div v-if="userProfile.name != null" class="col1">
         <div class="profile">
           <h5>{{ userProfile.name }}</h5>
           <p>{{ userProfile.title }}</p>
@@ -29,6 +29,49 @@
         </div>
       </div>
       <div class="col2">
+        <div class="post">
+          <div class="container">
+            <!-- Full-width images with number text -->
+            <div class="mySlides">
+              <div class="numbertext">1 / 6</div>
+              <img src="../assets/images/1.png" style="width:100%" />
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">2 / 6</div>
+              <img src="img_5terre_wide.jpg" style="width:100%" />
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">3 / 6</div>
+              <img src="img_mountains_wide.jpg" style="width:100%" />
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">4 / 6</div>
+              <img src="img_lights_wide.jpg" style="width:100%" />
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">5 / 6</div>
+              <img src="img_nature_wide.jpg" style="width:100%" />
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">6 / 6</div>
+              <img src="img_snow_wide.jpg" style="width:100%" />
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <!-- Image text -->
+            <div class="caption-container">
+              <p id="caption"></p>
+            </div>
+          </div>
+        </div>
         <div v-if="posts.length">
           <div v-for="post in posts" :key="post.id" class="post">
             <h5>{{ post.userName }}</h5>
@@ -99,8 +142,7 @@ import { commentsCollection } from "@/firebase";
 import { mapState } from "vuex";
 import moment from "moment";
 import CommentModal from "@/components/CommentModal";
-import PictureInput from "vue-picture-input";
-
+import { Carousel, Slide } from "vue-carousel";
 export default {
   components: {
     CommentModal,
