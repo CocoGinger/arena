@@ -34,10 +34,6 @@
             <h5>{{ post.userName }}</h5>
             <span>{{ post.createdOn | formatDate }}</span>
             <p>{{ post.content | trimLength }}</p>
-            <div v-if="post.image != ''">
-              <img :src="post.image" height="500" alt="Image" lazy />
-            </div>
-
             <ul>
               <li>
                 <a @click="toggleCommentModal(post)"
@@ -67,6 +63,10 @@
           <div class="post">
             <h5>{{ fullPost.userName }}</h5>
             <span>{{ fullPost.createdOn | formatDate }}</span>
+            <div v-if="post.image != ''">
+              <img :src="post.image" height="500" alt="Image" lazy />
+            </div>
+
             <p>{{ fullPost.content }}</p>
             <ul>
               <li>
