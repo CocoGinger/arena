@@ -6,13 +6,13 @@ require("dotenv").config();
 
 // firebase init
 const firebaseConfig = {
-  apiKey: process.env.apiKey,
-  authDomain: process.env.authDomain,
-  projectId: process.env.projectId,
-  storageBucket: process.env.storageBucket,
-  messagingSenderId: process.env.messagingSenderId,
-  appId: process.env.appId,
-  measurementId: process.env.measurementId,
+  apiKey: "AIzaSyBnW06RHWFfosprfeAj2wpmKqMEAgMbMP8",
+  authDomain: "sportsweb254.firebaseapp.com",
+  projectId: "sportsweb254",
+  storageBucket: "sportsweb254.appspot.com",
+  messagingSenderId: "184747777118",
+  appId: "1:184747777118:web:c75c615c8f548d447768cf",
+  measurementId: "G-R3WHR4YV73",
 };
 firebase.initializeApp(firebaseConfig);
 
