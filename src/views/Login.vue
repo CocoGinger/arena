@@ -6,7 +6,7 @@
     ></PasswordReset>
     <section>
       <div class="col1">
-        <h1>Arena</h1>
+        <h1>Task Arena</h1>
         <p>Welcome to Arena, Please Login/Signup to Get Started</p>
       </div>
 
@@ -44,7 +44,7 @@
             <input
               v-model.trim="signupForm.name"
               type="text"
-              placeholder="Your Full Name or Club Name"
+              placeholder="Your Full Name"
               id="name"
             />
           </div>

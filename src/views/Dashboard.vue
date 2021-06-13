@@ -13,7 +13,7 @@
           <h5>{{ userProfile.name }}</h5>
           <p>{{ userProfile.title }}</p>
           <div class="create-post">
-            <p>create Event</p>
+            <p>Post Job</p>
             <form @submit.prevent>
               <textarea v-model.trim="post.content"></textarea>
 
@@ -88,12 +88,12 @@
                   >Likes {{ post.likes }}</a
                 >
               </li>
-              <li><a @click="viewPost(post)">View Event</a></li>
+              <li><a @click="viewPost(post)">View Job</a></li>
             </ul>
           </div>
         </div>
         <div v-else>
-          <p class="no-results">There are currently no event available</p>
+          <p class="no-results">There are currently no jobs available</p>
         </div>
       </div>
     </section>
@@ -113,7 +113,7 @@
             <p>{{ fullPost.content }}</p>
             <ul>
               <li>
-                <a>Attends {{ fullPost.comments }}</a>
+                <a>Bids {{ fullPost.comments }}</a>
               </li>
               <li>
                 <a>Likes {{ fullPost.likes }}</a>
@@ -167,10 +167,8 @@ export default {
     createPost() {
       this.$store.dispatch("createPost", {
         content: this.post.content,
-        image: this.post.image,
       });
       this.post.content = "";
-      this.post.image = "";
     },
     toggleCommentModal(post) {
       this.showCommentModal = !this.showCommentModal;

@@ -2,10 +2,10 @@
   <div class="c-modal">
     <div class="c-container">
       <a @click="$emit('close')">close</a>
-      <p>add a comment</p>
+      <p>Add a bid: Clearly state your proposal and budget</p>
       <form @submit.prevent>
         <textarea v-model.trim="comment"></textarea>
-        <button @click="addComment()" :disabled="comment == ''" class="button">add comment</button>
+        <button @click="addComment()" :disabled="comment == ''" class="button">add bid</button>
       </form>
     </div>
   </div>

@@ -56,11 +56,9 @@ const store = new Vuex.Store({
       // create user object in userCollections
       await fb.usersCollection.doc(user.uid).set({
         name: form.name,
-        title: form.postion,
-        club: form.club,
+        title: form.title,
         uid: user.uid,
-        logo: user.photoURL,
-        players: [],
+        
       });
 
       // fetch user profile and set in state
