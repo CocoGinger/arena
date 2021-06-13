@@ -8,92 +8,94 @@
       ></CommentModal>
     </transition>
     <section>
-      <div v-if="userProfile.name != null" class="col1">
-        <div class="profile">
-          <h5>{{ userProfile.name }}</h5>
-          <p>{{ userProfile.title }}</p>
-          <div class="create-post">
-            <p>Post Job</p>
-            <form @submit.prevent>
-              <textarea v-model.trim="post.content"></textarea>
+      <div class="row">
+        <div v-if="userProfile.name != null" class="col-lg col-sm col-md col1">
+          <div class="profile">
+            <h5>{{ userProfile.name }}</h5>
+            <p>{{ userProfile.title }}</p>
+            <div class="create-post">
+              <p>Post Job</p>
+              <form @submit.prevent>
+                <textarea v-model.trim="post.content"></textarea>
 
-              <button
-                @click="createPost()"
-                :disabled="post.content === ''"
-                class="button"
-              >
-                Create
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="col2">
-        <div class="post">
-          <div class="container">
-            <!-- Full-width images with number text -->
-            <div class="mySlides">
-              <div class="numbertext">1 / 6</div>
-              <img src="../assets/images/1.png" style="width:100%" />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">2 / 6</div>
-              <img src="img_5terre_wide.jpg" style="width:100%" />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">3 / 6</div>
-              <img src="img_mountains_wide.jpg" style="width:100%" />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">4 / 6</div>
-              <img src="img_lights_wide.jpg" style="width:100%" />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">5 / 6</div>
-              <img src="img_nature_wide.jpg" style="width:100%" />
-            </div>
-
-            <div class="mySlides">
-              <div class="numbertext">6 / 6</div>
-              <img src="img_snow_wide.jpg" style="width:100%" />
-            </div>
-
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-            <!-- Image text -->
-            <div class="caption-container">
-              <p id="caption"></p>
-            </div>
-          </div>
-        </div>
-        <div v-if="posts.length">
-          <div v-for="post in posts" :key="post.id" class="post">
-            <h5>{{ post.userName }}</h5>
-            <span>{{ post.createdOn | formatDate }}</span>
-            <p>{{ post.content | trimLength }}</p>
-            <ul>
-              <li>
-                <a @click="toggleCommentModal(post)"
-                  >Attend {{ post.comments }}</a
+                <button
+                  @click="createPost()"
+                  :disabled="post.content === ''"
+                  class="button"
                 >
-              </li>
-              <li>
-                <a @click="likePost(post.id, post.likes)"
-                  >Likes {{ post.likes }}</a
-                >
-              </li>
-              <li><a @click="viewPost(post)">View Job</a></li>
-            </ul>
+                  Create
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-        <div v-else>
-          <p class="no-results">There are currently no jobs available</p>
+        <div class="col-lg col-sm col-md col2">
+          <div class="post">
+            <div class="container">
+              <!-- Full-width images with number text -->
+              <div class="mySlides">
+                <div class="numbertext">1 / 6</div>
+                <img src="../assets/images/1.png" style="width: 100%" />
+              </div>
+
+              <div class="mySlides">
+                <div class="numbertext">2 / 6</div>
+                <img src="img_5terre_wide.jpg" style="width: 100%" />
+              </div>
+
+              <div class="mySlides">
+                <div class="numbertext">3 / 6</div>
+                <img src="img_mountains_wide.jpg" style="width: 100%" />
+              </div>
+
+              <div class="mySlides">
+                <div class="numbertext">4 / 6</div>
+                <img src="img_lights_wide.jpg" style="width: 100%" />
+              </div>
+
+              <div class="mySlides">
+                <div class="numbertext">5 / 6</div>
+                <img src="img_nature_wide.jpg" style="width: 100%" />
+              </div>
+
+              <div class="mySlides">
+                <div class="numbertext">6 / 6</div>
+                <img src="img_snow_wide.jpg" style="width: 100%" />
+              </div>
+
+              <!-- Next and previous buttons -->
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+              <!-- Image text -->
+              <div class="caption-container">
+                <p id="caption"></p>
+              </div>
+            </div>
+          </div>
+          <div v-if="posts.length">
+            <div v-for="post in posts" :key="post.id" class="post">
+              <h5>{{ post.userName }}</h5>
+              <span>{{ post.createdOn | formatDate }}</span>
+              <p>{{ post.content | trimLength }}</p>
+              <ul>
+                <li>
+                  <a @click="toggleCommentModal(post)"
+                    >Bids {{ post.comments }}</a
+                  >
+                </li>
+                <li>
+                  <a @click="likePost(post.id, post.likes)"
+                    >Likes {{ post.likes }}</a
+                  >
+                </li>
+                <li><a @click="viewPost(post)">View Job</a></li>
+              </ul>
+            </div>
+          </div>
+          <div v-else>
+            <p class="no-results">There are currently no jobs available</p>
+          </div>
         </div>
       </div>
     </section>
@@ -106,9 +108,6 @@
           <div class="post">
             <h5>{{ fullPost.userName }}</h5>
             <span>{{ fullPost.createdOn | formatDate }}</span>
-            <div v-if="post.image != ''">
-              <img :src="post.image" height="500" alt="Image" lazy />
-            </div>
 
             <p>{{ fullPost.content }}</p>
             <ul>

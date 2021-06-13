@@ -93,7 +93,7 @@ const store = new Vuex.Store({
       await fb.postsCollection.add({
         createdOn: new Date(),
         content: post.content,
-        image: post.image,
+        
         userId: fb.auth.currentUser.uid,
         userName: state.userProfile.name,
         comments: 0,

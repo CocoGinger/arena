@@ -9,14 +9,8 @@
         />
         <h1>{{ userProfile.name }}</h1>
         <p class="title">{{ userProfile.title }}</p>
-        <p>Harvard University</p>
-        <div style="margin: 24px 0;">
-          <a href="#"><i class="fa fa-dribbble"></i></a>
-          <span></span>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-          <a href="#"><i class="fa fa-linkedin"></i></a>
-          <a href="#"><i class="fa fa-facebook"></i></a>
-        </div>
+        <p>Task Arena Account</p>
+      
       </div>
     </div>
     <div class="col1">
