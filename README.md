@@ -29,9 +29,6 @@ Changelog:
 * Leverage components, one of the more powerful features of Vue.js.
 * Familiarize yourself with core Vue.js concepts.
 
-### Get Started
-
-> This app uses the Vue CLI to scaffold a basic skeleton for the app and multiple npm packages. Refer to the [tutorial](http://savvyapps.com/blog/definitive-guide-building-web-app-vuejs-firebase) to learn how to set up a production-ready version of this app using Vue CLI. You will need node.js installed on your computer to run this app locally. Download it at https://nodejs.org/ if you haven't already. Follow the instructions below to get up and running.
 
 ``` bash
 # install dependencies
