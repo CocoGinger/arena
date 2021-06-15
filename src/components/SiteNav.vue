@@ -14,10 +14,12 @@
           </li>
           <li><a @click="logout()">logout</a></li>
 
-          <label class="switch">
-            <input type="checkbox" @click="onThemeChange()" />
-            <span class="slider round"></span>
-          </label>
+          <li>
+            <i class="bi-color" @click.prevent="onThemeChange()"
+              ><svg class="bi" width="32" height="32" fill="currentColor">
+                <use xlink:href="bootstrap-icons.svg#toggles" /></svg
+            ></i>
+          </li>
         </ul>
       </div>
     </section>

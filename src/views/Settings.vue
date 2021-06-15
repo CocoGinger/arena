@@ -1,6 +1,7 @@
 <template>
   <section id="settings">
-    <div class="col1">
+    <div class="row">
+      <div class="col-sm col-lg col-md col1">
       <div class="card">
         <img
           src="https://images.unsplash.com/photo-1611095565995-d09bbf618f6d?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -13,7 +14,7 @@
       
       </div>
     </div>
-    <div class="col1">
+    <div class="col-sm col-lg col-md  col1">
       <h3>Settings</h3>
       <p>Update your profile</p>
 
@@ -40,6 +41,7 @@
 
         <button @click="updateProfile()" class="button">Update Profile</button>
       </form>
+    </div>
     </div>
   </section>
 </template>
